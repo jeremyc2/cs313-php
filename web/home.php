@@ -24,7 +24,7 @@
         require 'navbar.php';
     ?>
     <div class="well">
-        <h1>This is going to be epic</h1>
+        <h1>This is going to be epic</h1> <img src="me.jpg">
         <blockquote class="blockquote">With a title inspired by the popular new song by Romeo Santos, and all the cool PHP hot stuff you could ever want, get ready to have your mind blown. Talk about being super, this is absolutely incredible.</blockquote>
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ktq4zATPFsI?start=60" allowfullscreen></iframe>
