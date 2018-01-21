@@ -1,0 +1,11 @@
+body
+{
+    background-color:  darkblue;
+    padding-top: 15px;
+}
+.well
+{
+    padding: 50px;
+    margin: 50px;
+    margin-top: 0px;
+}
