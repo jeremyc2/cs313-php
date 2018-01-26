@@ -86,7 +86,7 @@ session_start();
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     <?php
                     foreach($_SESSION as $key => $value){
-                        $id = "#" . $value;
+                        $id = "\"#\"" . $value;
                         echo "$($id).exBounce();";
                     }
                     ?>
