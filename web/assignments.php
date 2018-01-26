@@ -21,10 +21,18 @@
     </head>
 <body>
     <?php
-        require 'navbar.php';
+        require 'parts/navbar.php';
     ?>
     <div class="well">
-        Coming Soon!
+        <?php
+            foreach (scandir('.') as $file){
+                $file_ext = strpos($file, ".php");
+                if($file_ext !== false) {
+                    $filename = substr($file, 0 ,$file_ext);
+                    echo"<a href=\"$file\" >$filename</a><br/>";
+                }
+            }
+        ?>
     
     </div>
 

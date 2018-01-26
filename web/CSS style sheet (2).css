@@ -9,3 +9,30 @@ body
     margin: 50px;
     margin-top: 0px;
 }
+img
+{
+    width:100%;
+    position: relative;
+}
+.draggable
+{
+    
+}
+.ui-widget-content
+{
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+  .alert {
+      position: fixed;
+      top: 50px;
+      right: 25px;
+      z-index: 9999 !important;
+      display: none;
+  }
+  #cart {
+      position: fixed;
+      bottom: 50px;
+      right: 25px;
+      z-index: 9999 !important;
+  }
