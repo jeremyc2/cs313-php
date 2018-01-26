@@ -29,13 +29,25 @@ session_start();
         require 'parts/navbar.php';
     ?>
             <div class="well">
-                <h1>These are the items in your cart:</h1><br/>
+                <h1>Congratulations! Your order has been successfully processed! </h1><br/><br/>
+                <h2>Here's a review of your items:</h2><br/><br/>
                 <?php
+                $count = 0;
                 foreach($_SESSION as $key => $value){
-                    echo "<h3 class=\"item\" id=\"$value\">" . htmlspecialchars($value) . "</h3><br/> ";
+                    if ($count > 2)
+                            $count = 0;
+                        if ($count == 0)
+                            echo "<div class=\"row\">";
+                            echo "<div class=\"col-sm-4\" id=\"$value" . "col\">" . "<img src=\"images/$value.jpg\" class=\"img-responsive ui-widget-content\" id=\"$value\">". "<h3 class=\"item\" id=\"$value\">" . htmlspecialchars($value) . "</h3></div>";
+                        if ($count == 2)
+                            echo "</div>";
+                        $count++;
                 }
+                if(count != 3)
+                    echo "</div>";
                 ?>
-                    <h3 style="text-align:center">They should arrive in the next 3-5 business days at:</h3><br/><br/>
+                    <br/>
+                    <h1 style="text-align:center">Your order will be shipped to:</h1><br/>
                     <div style="text-align:center">
                         <p>
                             <?php echo htmlspecialchars($_REQUEST["address"])?>
@@ -47,13 +59,26 @@ session_start();
                         </p>
                         <p>
                             <?php echo htmlspecialchars($_REQUEST["phone"])?>
-                        </p>
+                        </p><br/><br/><br/>
                     </div>
+                    <h3 style="text-align:center">All orders should arrive within 3-5 business days.</h3><br/><br/>
+
 
 
 
 
             </div>
+            <script>
+                $(document).ready(function() {
+                    $(".ui-widget-content").height($(".ui-widget-content").width());
+
+                });
+                $(window).resize(function() {
+                    $(".ui-widget-content").height($(".ui-widget-content").width());
+                });
+
+            </script>
+
     </body>
 
     </html>

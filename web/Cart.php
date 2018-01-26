@@ -30,25 +30,40 @@ session_start();
         ?>
             <div class="alert alert-warning"> <strong>Success!</strong> One album added to cart. </div>
             <div class="well">
-                <p>Click on an item to delete it.</p>
+                <h1> Items in your cart: </h1><br/>
+
                 <?php
-                echo "<h1 Items in your cart: </h1><br/>";
+                $count = 0;
                 foreach($_SESSION as $key => $value){
-                    echo "<h3 class=\"item\" id=\"$value\">" . htmlspecialchars($value) . "</h3><br/> ";
+                    if ($count > 2)
+                            $count = 0;
+                        if ($count == 0)
+                            echo "<div class=\"row\">";
+                            echo "<div class=\"col-sm-4\" id=\"$value" . "col\">" . "<img src=\"images/$value.jpg\" class=\"img-responsive ui-widget-content item\" id=\"$value\">". "<h3 class=\"item\" id=\"$value" . "txt\">" . htmlspecialchars($value) . "</h3></div>";
+                        if ($count == 2)
+                            echo "</div>";
+                        $count++;
                 }
+                if($count != 3)
+                    echo "</div>";
                 ?>
-                    <button class="btn btn-lrg" id="back"><a href="Browse.php">Back to Browse</a></button>
+                    <br/><br/>
+                    <p>Click on an item to delete it.</p>
+                    <br/><br/><button class="btn btn-lrg" id="back"><a href="Browse.php">Back to Browse</a></button>
                     <button class="btn btn-lrg" id="clear">Clear All</button>
                     <button class="btn btn-lrg" id="forward"><a href="Checkout.php">Submit Order</a></button>
             </div>
             <script>
                 $(document).ready(function() {
+                    $(".ui-widget-content").height($(".ui-widget-content").width());
                     $(".item").click(function() {
                         var id = $(this).attr('id');
                         $(".alert").load("manipulateCart.php", {
                             delete: id
                         });
                         $(this).remove();
+                        var text = "#" + id + "txt";
+                        $(text).remove();
                         $(".alert").fadeIn("fast", function() {
                             $(this).fadeOut(5000, function() {
                                 $(this).stop(true, false);
@@ -66,6 +81,9 @@ session_start();
                             });
                         });
                     });
+                });
+                $(window).resize(function() {
+                    $(".ui-widget-content").height($(".ui-widget-content").width());
                 });
 
             </script>
