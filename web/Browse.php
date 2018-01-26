@@ -71,12 +71,14 @@ session_start();
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     $(".ui-widget-content").click(function() {
                         var self = $(this);
+                        var id = self.attr('id');
                         // If animated please stop
-                        if (self.is(':animated'))
+                        if (self.is(':animated')){
                             self.stop(true, false)
                             .css("top", "0px");
+                            $(".alert").load("manipulateCart.php", { delete: id });
+                        }
                         else {
-                            var id = self.attr('id');
                             $(".alert").load("manipulateCart.php", { add: id });
                             (function runEffect() {
                                 self.animate({
