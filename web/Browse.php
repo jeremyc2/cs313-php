@@ -84,6 +84,12 @@ session_start();
 
                 $(document).ready(function() {
                     $(".ui-widget-content").height($(".ui-widget-content").width());
+                    <?php
+                    foreach($_SESSION as $key => $value){
+                        $id = "#" . $value;
+                        echo "$($id).exBounce();"
+                    }
+                    ?>
                     $(".ui-widget-content").click(function() {
                         var self = $(this);
                         var id = self.attr('id');
