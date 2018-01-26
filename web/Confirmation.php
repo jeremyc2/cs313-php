@@ -38,7 +38,7 @@ session_start();
                             $count = 0;
                         if ($count == 0)
                             echo "<div class=\"row\">";
-                            echo "<div class=\"col-sm-4\" id=\"$value" . "col\">" . "<img src=\"images/$value.jpg\" class=\"img-responsive ui-widget-content\" id=\"$value\">". "<h3 class=\"item\" id=\"$value\">" . htmlspecialchars($value) . "</h3></div>";
+                            echo "<div class=\"col-sm-4\" id=\"$value" . "col\">" . "<h3 class=\"item\" style=\"text-align:center\" id=\"$value" . "txt\">" . htmlspecialchars($value) . "</h3>" . "<img src=\"images/$value.jpg\" class=\"img-responsive ui-widget-content item\" id=\"$value\"></div>";
                         if ($count == 2)
                             echo "</div>";
                         $count++;
