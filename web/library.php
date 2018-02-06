@@ -4,8 +4,8 @@ session_start();
 
     <!DOCTYPE html>
     <html>
-    $dbUrl = getenv('ec2-54-163-228-190.compute-1.amazonaws.com');
-    
+    $dbUrl = getenv('DATABASE_URL');
+
     $dbopts = parse_url($dbUrl);
 
     $dbHost = $dbopts["host"];
