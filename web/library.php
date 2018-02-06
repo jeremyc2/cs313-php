@@ -61,7 +61,7 @@ session_start();
             $stmt->execute(array(':name' => $name));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row) {
-                 $artist = row['artist'];
+                 $artist = $row['artist'];
                  $file = $artist . ".jpg";
                 if ($count > 2) {
                     $count = 0;
