@@ -1,0 +1,14 @@
+Host
+ec2-54-163-228-190.compute-1.amazonaws.com
+
+Database
+dco5mqvpd4jkbg
+
+User
+pqdxbalajvmouj
+
+Port
+5432
+
+Password
+2299f0b104265892b4344e7d3f4f5abb1ddea93bc9fa041e632245e2a2b6801e
