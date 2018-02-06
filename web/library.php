@@ -56,8 +56,9 @@ session_start();
             <div class="well">
                 <?php
             $count = 0;
-            $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
-            $stmt->execute(array(':name' => $name, ':id' => $id));
+            $name = 'Alejandrofernandez';
+            $stmt = $db->prepare('SELECT * FROM albums WHERE artist=:name');
+            $stmt->execute(array(':name' => $name));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row) {
                  $artist = row['artist'];
