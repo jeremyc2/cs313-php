@@ -2,8 +2,6 @@
 // Start the session
 session_start();
 
-    <!DOCTYPE html>
-    <html>
     $dbUrl = getenv('DATABASE_URL');
 
     $dbopts = parse_url($dbUrl);
@@ -12,10 +10,12 @@ session_start();
     $dbPort = $dbopts["port"];
     $dbUser = $dbopts["user"];
     $dbPassword = $dbopts["pass"];
-    $dbName = ltrim($dbopts["path"],'/');
+    $dbName = ltrim($dbopts["path"], '/');
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     ?>
+    <!DOCTYPE html>
+    <html>
     <head>
         <title>Héroe Favorito</title>
         <meta charset="utf-8">
@@ -56,22 +56,23 @@ session_start();
             <div class="well">
                 <?php
             $count = 0;
-            foreach (scandir('images') as $file){
-                if ($file != '.') {
-                    if ($file != '..'){
-                        $slashPosition = strpos($file, "/");
-                        $dotPosition = strpos($file, ".");
-                        $artist = substr($file, $slashPosition, $dotPosition);
-                        if ($count > 2)
-                            $count = 0;
-                        if ($count == 0)
-                            echo "<div class=\"row\">";
-                        echo "<div class=\"col-sm-4\" id=\"$artist" . "col\"><img src=\"images/$file\" class=\"img-responsive ui-widget-content\" id=\"$artist\"></div>";
-                        if ($count == 2)
-                            echo "</div>";
-                        $count++;
-                    }
+            $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+            $stmt->execute(array(':name' => $name, ':id' => $id));
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+                 $artist = row['artist'];
+                 $file = $artist . ".jpg";
+                if ($count > 2) {
+                    $count = 0;
                 }
+                if ($count == 0) {
+                    echo "<div class=\"row\">";
+                }
+                echo "<div class=\"col-sm-4\" id=\"$artist" . "col\"><img src=\"images/$file\" class=\"img-responsive ui-widget-content\" id=\"$artist\"></div>";
+                if ($count == 2) {
+                    echo "</div>";
+                }
+                $count++;
             }
         ?>
             </div>
@@ -96,7 +97,7 @@ session_start();
                 $(document).ready(function() {
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     <?php
-                    foreach($_SESSION as $key => $value){
+                    foreach ($_SESSION as $key => $value) {
                         $id = "\"#" . $value . "\"";
                         echo "$($id).exBounce();";
                     }

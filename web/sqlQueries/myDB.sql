@@ -49,3 +49,5 @@ CREATE TABLE songs_playlists
      p_id integer references playlists(id),
      UNIQUE(s_id,p_id)
 );
+
+insert into albums (artist) values ('Alejandrofernandez');
