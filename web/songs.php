@@ -75,6 +75,13 @@ session_start();
                 $count++;
             }
         ?>
+                 <div class="nowPlaying">
+                      <?php
+                           $stmt = $db->prepare('SELECT * FROM Playlists');
+                           $stmt->execute();
+                           $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                       ?>
+                 </div>
             </div>
 
             <script>

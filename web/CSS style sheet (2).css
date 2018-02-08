@@ -16,7 +16,7 @@ img
 }
 .draggable
 {
-    
+
 }
 .ui-widget-content
 {
@@ -36,3 +36,10 @@ img
       right: 25px;
       z-index: 9999 !important;
   }
+  .nowPlaying {
+       width: 100%;
+       height: 30px;
+       z-index: 1000;
+       position: absolute;
+       bottom: 0px;
+ }
