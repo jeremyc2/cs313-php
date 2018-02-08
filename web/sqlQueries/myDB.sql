@@ -51,3 +51,14 @@ CREATE TABLE songs_playlists
 );
 
 insert into albums (artist) values ('Alejandrofernandez');
+insert into albums (artist) values ('alejandrosanz');
+insert into albums (artist) values ('almafuerte');
+insert into albums (artist) values ('andrescepeda');
+insert into albums (artist) values ('axel');
+insert into albums (artist) values ('bacilos');
+insert into albums (artist) values ('camila');
+insert into albums (artist) values ('carlosbuate');
+insert into albums (artist) values ('carlosvives');
+insert into albums (artist) values ('carnecruda');
+insert into albums (artist) values ('charlygarcia');
+insert into albums (artist) values ('chayanne');
