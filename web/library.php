@@ -57,7 +57,7 @@ session_start();
                 <?php
             $count = 0;
             $stmt = $db->prepare('SELECT * FROM albums');
-            $stmt->execute(array(':name' => $name));
+            $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row) {
                  $artist = $row['artist'];
