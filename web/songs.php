@@ -109,11 +109,11 @@ session_start();
                         if (self.is(':animated')) {
                             self.stop(true, false)
                                 .css("top", "0px");
-                            $(".alert").load("manipulateCart.php", {
+                            $(".alert").load("changedatabase.php", {
                                 delete: id
                             });
                         } else {
-                            $(".alert").load("manipulateCart.php", {
+                            $(".alert").load("changedatabase.php", {
                                 add: id
                             });
                             self.exBounce();
