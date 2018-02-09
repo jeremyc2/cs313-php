@@ -32,8 +32,8 @@ img
   }
   #cart {
       position: fixed;
-      bottom: 50px;
-      right: 25px;
+      bottom: 100px;
+      right: 50px;
       z-index: 9999 !important;
   }
   .nowPlaying {
@@ -45,4 +45,4 @@ img
        left: 0px;
        background-color: white;
  }
- li { display: inline-block; } 
+ li { display: inline-block; }
