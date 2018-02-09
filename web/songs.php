@@ -44,8 +44,7 @@ session_start();
                     tolerance: "pointer",
                     stop: function( e, ui ) {
                          alert("hello01");
-                         $(ui.helper).removeClass("ui-widget-content");
-                         $(ui.helper).addClass("ui-widget-content1");
+                         $(ui.helper).fadeOut();
                     }
                });
                 $("#sortable").sortable({
