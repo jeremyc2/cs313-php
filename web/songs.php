@@ -37,9 +37,9 @@ session_start();
         <script>
             $(function() {
                 $(".ui-widget-content").draggable({
-                    helper: "clone"
-                    containment: "window"
-                    connectToSortable: "#sortable"
+                    helper: "clone";
+                    containment: "window";
+                    connectToSortable: "#sortable";
                 });
             });
 
