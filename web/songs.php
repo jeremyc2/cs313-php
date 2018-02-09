@@ -44,7 +44,7 @@ session_start();
                     tolerance: "pointer",
                     stop: function( e, ui ) {
                          alert("hello01");
-                         $(ui.helper).fadeOut();
+                         ui.helper.fadeOut();
                     }
                });
                 $("#sortable").sortable({
