@@ -42,7 +42,7 @@ session_start();
                      helper: 'clone',
                     connectToSortable: '#sortable',
                     tolerance: "pointer",
-                    stop: function( event, ui ) {
+                    start: function( e, ui ) {
                          $(ui.helper).removeClass("ui-widget-content");
                     }
                });
