@@ -42,6 +42,9 @@ session_start();
                      helper: 'clone',
                     connectToSortable: '#sortable'
                 });
+                $("#sortable").sortable({
+                axis: "x"
+               });
             });
 
         </script>
@@ -113,10 +116,6 @@ session_start();
                 };
 
                 $(document).ready(function() {
-                     $("#sortable").sortable({
-                      axis: "x",
-                      connectWith: ".ui-widget-content"
-                    });
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     <?php
                     foreach ($_SESSION as $key => $value) {
