@@ -38,6 +38,8 @@ session_start();
             $(function() {
                 $(".ui-widget-content").draggable({
                     helper: "clone"
+                    containment: "window"
+                    connectToSortable: "#sortable"
                 });
             });
 
@@ -75,7 +77,7 @@ session_start();
                 $count++;
             }
         ?>
-                 <div class="nowPlaying">
+                 <div class="nowPlaying" id="sortable">
                       <?php
                            $stmt = $db->prepare('SELECT * FROM Playlists');
                            $stmt->execute();
@@ -102,6 +104,9 @@ session_start();
                 };
 
                 $(document).ready(function() {
+                     $("#sortable").sortable({
+                      axis: "x"
+                    });
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     <?php
                     foreach ($_SESSION as $key => $value) {
