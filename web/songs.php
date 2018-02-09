@@ -41,7 +41,7 @@ session_start();
                      scroll: false,
                      helper: helper: function (e, item) {
                           return item.clone();
-                    }
+                    },
                     connectToSortable: '#sortable',
                     tolerance: "pointer"
                });
