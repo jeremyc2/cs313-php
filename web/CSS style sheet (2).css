@@ -38,7 +38,7 @@ img
   }
   .nowPlaying {
        width: 100%;
-       min-height: 100px;
+       min-height: 500px;
        z-index: 1000;
        position: fixed;
        bottom: 0px;
