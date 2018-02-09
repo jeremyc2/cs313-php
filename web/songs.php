@@ -40,7 +40,7 @@ session_start();
                      containment: 'window',
                      scroll: false,
                      helper: 'clone',
-                    connectToSortable: '#sortable'
+                    connectToSortable: '#sortable',
                     tolerance: "pointer"
                 });
                 $("#sortable").sortable({
