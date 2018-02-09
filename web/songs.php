@@ -77,17 +77,19 @@ session_start();
                 $count++;
             }
         ?>
-                 <div class="nowPlaying">
-                      <div class="col-sm-3" id="sortable">
-                           <li>Sortable 1</li>
-                           <li>Sortable 2</li>
-                           <li>Sortable 3</li>
-                           <li>Sortable 4</li>
+                 <div class="nowPlaying row" id="sortable">
+                      <div class="col-sm-3 li">
                            <?php
                                 $stmt = $db->prepare('SELECT * FROM Playlists');
                                 $stmt->execute();
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             ?>
+                      </div>
+                      <div class="col-sm-3 li">
+                      </div>
+                      <div class="col-sm-3 li">
+                      </div>
+                      <div class="col-sm-3 li">
                       </div>
                  </div>
             </div>
