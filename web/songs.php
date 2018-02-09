@@ -37,8 +37,10 @@ session_start();
         <script>
             $(function() {
                 $(".ui-widget-content").draggable({
-                    helper: "clone",
-                    containment: "window",
+                     appendTo: 'body',
+                     containment: 'window',
+                     scroll: false,
+                     helper: 'clone',
                     connectToSortable: "#sortable"
                 });
             });
