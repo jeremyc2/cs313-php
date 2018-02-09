@@ -44,7 +44,7 @@ session_start();
                     tolerance: "pointer",
                     start: function(event, ui) {
                         ui.helper.css('background-color', 'red');
-                        $(this).addClass('margin_8px_auto');
+                        document.getElementsByClassName('ui-widget-content')[1].classList.add("mystyle");
                     }
                });
                 $("#sortable").sortable({
