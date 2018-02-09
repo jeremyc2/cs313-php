@@ -39,13 +39,11 @@ session_start();
                 $(".ui-widget-content").draggable({
                      containment: 'window',
                      scroll: false,
-                     helper: 'clone',
-                    connectToSortable: '#sortable',
-                    tolerance: "pointer",
-                    stop: function( e, ui ) {
-                         alert("hello01");
-                         ui.helper.fadeOut();
+                     helper: helper: function (e, item) {
+                          return item.clone();
                     }
+                    connectToSortable: '#sortable',
+                    tolerance: "pointer"
                });
                 $("#sortable").sortable({
                 axis: "x"
