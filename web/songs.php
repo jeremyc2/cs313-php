@@ -42,8 +42,8 @@ session_start();
                      helper: 'clone',
                     connectToSortable: '#sortable',
                     tolerance: "pointer",
-                    start: function( e, ui ) {
-                         alert("hello");
+                    stop: function( e, ui ) {
+                         alert("hello01");
                          $(ui.helper).removeClass("ui-widget-content");
                          $(ui.helper).addClass("ui-widget-content1");
                     }
