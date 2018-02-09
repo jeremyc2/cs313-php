@@ -39,7 +39,7 @@ session_start();
                 $(".ui-widget-content").draggable({
                      containment: 'window',
                      scroll: false,
-                     helper: helper: function (e, item) {
+                     helper: function (e, item) {
                           return item.clone();
                     },
                     connectToSortable: '#sortable',
