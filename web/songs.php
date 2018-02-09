@@ -78,6 +78,10 @@ session_start();
             }
         ?>
                  <div class="nowPlaying" id="sortable">
+                      <li>Sortable 1</li>
+                      <li>Sortable 1</li>
+                      <li>Sortable 1</li>
+                      <li>Sortable 1</li>
                       <?php
                            $stmt = $db->prepare('SELECT * FROM Playlists');
                            $stmt->execute();
