@@ -37,7 +37,6 @@ session_start();
         <script>
             $(function() {
                 $(".ui-widget-content").draggable({
-                     appendTo: 'body',
                      containment: 'window',
                      scroll: false,
                      helper: 'clone',
