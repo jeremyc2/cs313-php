@@ -115,6 +115,7 @@ session_start();
                 $(document).ready(function() {
                      $("#sortable").sortable({
                       axis: "x"
+                      connectWith: ".ui-widget-content"  
                     });
                     $(".ui-widget-content").height($(".ui-widget-content").width());
                     <?php
