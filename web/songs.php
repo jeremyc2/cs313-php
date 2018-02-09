@@ -41,6 +41,7 @@ session_start();
                      scroll: false,
                      helper: 'clone',
                     connectToSortable: '#sortable'
+                    tolerance: "pointer"
                 });
                 $("#sortable").sortable({
                 axis: "x"
