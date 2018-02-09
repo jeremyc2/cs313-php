@@ -43,7 +43,9 @@ session_start();
                     connectToSortable: '#sortable',
                     tolerance: "pointer",
                     start: function( e, ui ) {
+                         alert("hello");
                          $(ui.helper).removeClass("ui-widget-content");
+                         $(ui.helper).addClass("ui-widget-content1");
                     }
                });
                 $("#sortable").sortable({
