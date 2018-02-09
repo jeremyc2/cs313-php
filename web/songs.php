@@ -41,11 +41,7 @@ session_start();
                      scroll: false,
                      helper: 'clone',
                     connectToSortable: '#sortable',
-                    tolerance: "pointer",
-                    start: function(event, ui) {
-                        ui.helper.css('background-color', 'red');
-                        document.getElementsByClassName('ui-widget-content')[1].classList.add("mystyle");
-                    }
+                    tolerance: "pointer"
                });
                 $("#sortable").sortable({
                 axis: "x"
