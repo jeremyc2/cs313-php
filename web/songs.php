@@ -41,8 +41,11 @@ session_start();
                      scroll: false,
                      helper: 'clone',
                     connectToSortable: '#sortable',
-                    tolerance: "pointer"
-                });
+                    tolerance: "pointer",
+                    stop: function( event, ui ) {
+                         $(ui.helper).removeClass("ui-widget-content");
+                    }
+               });
                 $("#sortable").sortable({
                 axis: "x"
                });
