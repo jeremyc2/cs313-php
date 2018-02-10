@@ -62,3 +62,27 @@ insert into albums (artist) values ('carlosvives');
 insert into albums (artist) values ('carnecruda');
 insert into albums (artist) values ('charlygarcia');
 insert into albums (artist) values ('chayanne');
+
+     INSERT INTO albums(artist, genre, rating) VALUES
+     ('ciro', 'pop', '100'),
+     ('cnco', 'latin', '50'),
+     ('danielsantacruz','latin', '25');
+
+     INSERT INTO songs_playlists(s_id, p_id) VALUES
+       (
+        (SELECT id FROM songs WHERE album = (SELECT id FROM albums WHERE artist = 'cnco') limit 1),
+        (SELECT id FROM playlists WHERE title = 'now playing' LIMIT 1)
+       );
+
+       INSERT INTO songs_playlists(s_id, p_id) VALUES
+         (
+          (SELECT id FROM songs WHERE album = (SELECT id FROM albums WHERE artist = 'cnco') limit 1 offset 1),
+          (SELECT id FROM playlists WHERE title = 'now playing' LIMIT 1)
+         );
+
+       INSERT INTO playlists(title) VALUES ('now playing');
+
+       INSERT INTO songs(title, youtube_link,album, duration,genre) VALUES
+       ('Reggaeton Lento', 'https://www.youtube.com/watch?v=7jpqqBX-Myw',(SELECT id FROM albums WHERE artist = 'cnco') ,90, 'latin pop'),
+       ('Mamita', 'https://www.youtube.com/watch?v=OHELU6I10wQ', (SELECT id FROM albums WHERE artist = 'cnco'), 120, 'latin pop'),
+       ('La Rosa', 'https://www.youtube.com/watch?v=7t3ICrmBxxM', (SELECT id FROM albums WHERE artist = 'ciro'), 121, 'latin ballad');
