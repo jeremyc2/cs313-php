@@ -85,9 +85,28 @@ session_start();
                  <div class="nowPlaying row" id="sortable">
                       <div class="col-sm-3 li">
                            <?php
-                                $stmt = $db->prepare('SELECT * FROM Playlists');
+                                $stmt = $db->prepare('SELECT * FROM albums a
+                                JOIN songs s ON s.album = a.id
+                                JOIN playlists p ON sp.p_id = playlists.id
+                                JOIN songs_playlists sp ON sp.s_id = songs.id
+                                WHERE p.title = 'nowPlaying'');
                                 $stmt->execute();
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($rows as $row) {
+                                     $artist = $row['artist'];
+                                     $file = $artist . ".jpg";
+                                    if ($count > 2) {
+                                        $count = 0;
+                                    }
+                                    if ($count == 0) {
+                                        echo "<div class=\"row\">";
+                                    }
+                                    echo "<div class=\"col-sm-4\" id=\"$artist" . "col\"><img src=\"images/$file\" class=\"img-responsive ui-widget-content\" id=\"$artist\"></div>";
+                                    if ($count == 2) {
+                                        echo "</div>";
+                                    }
+                                    $count++;
+                                }
                             ?>
                       </div>
                       <div class="col-sm-3 li">
