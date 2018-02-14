@@ -51,7 +51,18 @@ session_start();
      <body>
           <form id="formId" action="send.php" method="post">
                <textarea name="query" rows="8" cols="80"></textarea><br>
-               <button type="button" name="button" onclick="send()">Submit</button>
+               <button type="button" name="button" onclick="send()">Run</button>
+               <select name="query_list">
+               <?php
+                    foreach (scandir('/sqlQueries') as $file){
+                        $file_ext = strpos($file, ".sql");
+                        if($file_ext !== false) {
+                            $filename = substr($file, 0 ,$file_ext);
+                            echo"<option value=\"$filename\">$filename</option>";
+                        }
+                    }
+               ?>
+               </select>
           </form>
           <br><br>
           <div class="result">
