@@ -14,6 +14,8 @@
          $dbName = ltrim($dbopts["path"], '/');
 
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+         if (!empty($query)) {
          $statement = $db->query($query);
          $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
          echo "<table>\n";
@@ -34,6 +36,7 @@
          }
 
          echo "</table>";
+    }
 
          $tables = array("users", "albums", "threads", "songs", "playlists", "songs_playlists");
          foreach ($tables as $table) {

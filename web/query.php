@@ -81,5 +81,11 @@ session_start();
           <div class="result">
 
           </div>
+          <script type="text/javascript">
+               $( document ).ready(function() {
+                    console.log( "ready!" );
+                    load();
+               });
+          </script>
      </body>
 </html>
