@@ -84,7 +84,7 @@ session_start();
           <script type="text/javascript">
                $( document ).ready(function() {
                     console.log( "ready!" );
-                    load();
+                    run();
                });
           </script>
      </body>
