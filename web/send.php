@@ -17,5 +17,5 @@
          // $stmt = $db->prepare(:query);
          // $stmt->bindValue(':query', $query, PDO::PARAM_STR);
          // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         echo $query . " IT WORKED!";
+         echo " IT WORKED!";
 ?>
