@@ -21,7 +21,7 @@
          foreach ($rows[0] as $key => $value) {
               echo $key;
          }
-         foreach ($rows as $key => $values) // For every field name (id, name, last_name, gender)
+         foreach ($rows as $values) // For every field name (id, name, last_name, gender)
          {
              echo "<tr>\n"; // start the row
                  foreach ($values as $cell) // for every sub-array iterate through all values
