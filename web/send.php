@@ -14,4 +14,5 @@
          $dbName = ltrim($dbopts["path"], '/');
 
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+         echo $query . " IT WORKED!";
 ?>

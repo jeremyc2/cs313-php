@@ -23,7 +23,7 @@ session_start();
           <title>tables</title>
      </head>
      <body>
-          <form id="formId" action="index.html" method="post">
+          <form id="formId" action="send()" method="post">
                <textarea name="query" rows="8" cols="80"></textarea>
                <button type="submit" name="button"></button>
           </form>
