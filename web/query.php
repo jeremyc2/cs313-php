@@ -24,8 +24,8 @@ session_start();
      </head>
      <body>
           <form id="formId" action="send()" method="post">
-               <textarea name="query" rows="8" cols="80"></textarea>
-               <button type="submit" name="button"></button>
+               <textarea name="query" rows="8" cols="80"></textarea><br>
+               <button type="submit" name="button">Submit</button>
           </form>
           <br><br>
           <div class="result">
