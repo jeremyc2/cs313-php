@@ -54,7 +54,7 @@ session_start();
                <button type="button" name="button" onclick="send()">Run</button>
                <select name="query_list">
                <?php
-                    foreach (scandir('/sqlQueries') as $file){
+                    foreach (scandir("/sqlQueries/") as $file){
                         $file_ext = strpos($file, ".sql");
                         if($file_ext !== false) {
                             $filename = substr($file, 0 ,$file_ext);
