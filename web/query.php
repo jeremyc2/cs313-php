@@ -43,8 +43,7 @@ session_start();
 
           <script type="text/javascript">
                function send() {
-                    alert($('#formId').serialize());
-                    $(".result").load(send.php, $('#formId').serialize());
+                    $(".result").load("send.php", $('#formId').serialize());
                }
           </script>
      </body>

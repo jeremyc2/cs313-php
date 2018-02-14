@@ -32,7 +32,6 @@ session_start();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script src="funnybusiness.js"></script>
-        <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
         <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <script>
             $(function() {
