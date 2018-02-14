@@ -76,7 +76,7 @@ session_start();
                     $(".result").load("send.php", $('#formId').serialize());
                }
                function load() {
-                    $str = $("#query_list").val() . ".sql";
+                    $str = $("#query_list").val() + ".sql";
                     $("#input").load($str);
                }
           </script>
