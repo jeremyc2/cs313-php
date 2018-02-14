@@ -62,3 +62,7 @@ img
  td:nth-child(even) {
      background-color: #dddddd;
  }
+
+ td:nth-child(odd) {
+     background-color: grey;
+ }
