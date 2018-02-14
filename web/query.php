@@ -30,6 +30,23 @@ session_start();
           <!-- Latest compiled JavaScript -->
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
           <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+          <style>
+               table {
+                   font-family: arial, sans-serif;
+                   border-collapse: collapse;
+                   width: 100%;
+               }
+
+               td, th {
+                   border: 1px solid #dddddd;
+                   text-align: left;
+                   padding: 8px;
+               }
+
+               td:nth-child(even) {
+                   background-color: #dddddd;
+               }
+          </style>
      </head>
      <body>
           <form id="formId" action="send.php" method="post">
