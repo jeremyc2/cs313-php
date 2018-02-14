@@ -55,7 +55,6 @@ session_start();
                <select name="query_list">
                <?php
                     foreach (scandir("sqlQueries") as $file){
-                         echo $file;
                         $file_ext = strpos($file, ".sql");
                         if($file_ext !== false) {
                             $filename = substr($file, 0 ,$file_ext);
