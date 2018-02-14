@@ -47,6 +47,15 @@ session_start();
                    background-color: #dddddd;
                }
           </style>
+          <script type="text/javascript">
+               function send() {
+                    $(".result").load("send.php", $('#formId').serialize());
+               }
+               function load() {
+                    $str = "sqlQueries/" + $("#query_list").val() + ".sql";
+                    $("#input").load($str);
+               }
+          </script>
      </head>
      <body>
           <form id="formId">
@@ -70,15 +79,5 @@ session_start();
           <div class="result">
 
           </div>
-
-          <script type="text/javascript">
-               function send() {
-                    $(".result").load("send.php", $('#formId').serialize());
-               }
-               function load() {
-                    $str = "sqlQueries/" + $("#query_list").val() + ".sql";
-                    $("#input").load($str);
-               }
-          </script>
      </body>
 </html>
