@@ -16,11 +16,12 @@
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
          $statement = $db->query($query);
          $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-         print_r($rows);
          echo "<table>\n";
+         echo "<tr>";
          foreach ($rows[0] as $key => $value) {
-              echo $key;
+              echo "<th>" . $key . "</th>";
          }
+         echo "</tr>";
          foreach ($rows as $values) // For every field name (id, name, last_name, gender)
          {
              echo "<tr>\n"; // start the row
