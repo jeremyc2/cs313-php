@@ -62,8 +62,9 @@ session_start();
                         }
                     }
                ?>
-               <button type="button" name="button" onclick="load()">Load</button>
+
                </select>
+               <button type="button" name="button" onclick="load()">Load</button>
           </form>
           <br><br>
           <div class="result">
