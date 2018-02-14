@@ -56,5 +56,6 @@
                   echo "</tr>\n"; // end row
 
               }
+              echo "</table>";
          }
 ?>
