@@ -28,6 +28,7 @@ session_start();
         <?php
     require 'parts/navbar.php';
         ?>
+        <div class="well">
         <form class="" action="index.html" method="post">
              <table>
                   <?php
@@ -54,6 +55,7 @@ session_start();
                    ?>
              </table>
         </form>
+   </div>
 
     </body>
 
