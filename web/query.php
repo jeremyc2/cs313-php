@@ -53,7 +53,9 @@ session_start();
                }
                function load() {
                     $str = "sqlQueries/" + $("#query_list").val() + ".sql";
-                    $("#input").load($str);
+                    $.get($str, function(data){
+                      $('#input').val(data);
+                    });
                }
           </script>
      </head>
