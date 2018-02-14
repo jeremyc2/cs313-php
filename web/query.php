@@ -49,7 +49,7 @@ session_start();
           </style>
      </head>
      <body>
-          <form id="formId" action="send.php" method="post">
+          <form id="formId">
                <textarea name="query" rows="8" cols="80" id="input"></textarea><br>
                <button type="button" name="button" onclick="send()">Run</button><br><br>
                <select name="query_list" id="query_list">
