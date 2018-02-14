@@ -23,9 +23,9 @@ session_start();
           <title>tables</title>
      </head>
      <body>
-          <form id="formId" action="send()" method="post">
+          <form id="formId" action="send.php" method="post">
                <textarea name="query" rows="8" cols="80"></textarea><br>
-               <button type="submit" name="button">Submit</button>
+               <button type="button" name="button" onclick="send()">Submit</button>
           </form>
           <br><br>
           <div class="result">
