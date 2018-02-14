@@ -37,6 +37,7 @@
 
          $tables = array("users", "albums", "threads", "songs", "playlists", "songs_playlists");
          foreach ($tables as $table) {
+              echo "<br><br><br><h1>$table</h1><br>";
               $statement = $db->query("select * from $table;");
               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
               echo "<table>\n";
