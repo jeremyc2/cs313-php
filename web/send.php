@@ -14,7 +14,6 @@
          $dbName = ltrim($dbopts["path"], '/');
 
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-         echo $query . "<br>";
          $statement = $db->query($query);
          $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
          echo "<table>\n";
