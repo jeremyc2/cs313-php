@@ -16,6 +16,7 @@
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
          $statement = $db->query($query);
          $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+         print_r($rows);
          echo "<table>\n";
 
          foreach ($rows as $key => $values) // For every field name (id, name, last_name, gender)
