@@ -28,65 +28,33 @@ session_start();
         <?php
     require 'parts/navbar.php';
         ?>
-            <div class="alert alert-warning"> <strong>Success!</strong> One album added to cart. </div>
-            <div class="well">
-                <h1> Items in your cart: </h1><br/>
+        <form class="" action="index.html" method="post">
+             <table>
+                  <?php
+                            echo "<br><br><br><h1>Playlists</h1><br>";
+                            $statement = $db->query("select s.title, artist from songs s join albums a on (s.album = a.id);");
+                            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                            echo "<table>\n";
+                            echo "<tr>";
+                            foreach ($rows[0] as $key => $value) {
+                                 echo "<th>" . $key . "</th>";
+                            }
+                            echo "</tr>";
+                            foreach ($rows as $values) // For every field name (id, name, last_name, gender)
+                            {
+                                echo "<tr>\n"; // start the row
+                                    foreach ($values as $cell) // for every sub-array iterate through all values
+                                    {
+                                       echo "\t<td>" . $cell . "</td>\n"; // write cells next to each other
+                                    }
+                                echo "</tr>\n"; // end row
 
-                <?php
-                $count = 0;
-                foreach($_SESSION as $key => $value){
-                    if ($count > 2)
-                            $count = 0;
-                        if ($count == 0)
-                            echo "<div class=\"row\">";
-                            echo "<div class=\"col-sm-4\" id=\"$value" . "col\">" . "<h3 class=\"item\" style=\"text-align:center\" id=\"$value" . "txt\">" . htmlspecialchars($value) . "</h3>" . "<img src=\"images/$value.jpg\" class=\"img-responsive ui-widget-content item\" id=\"$value\"></div>";
-                        if ($count == 2)
-                            echo "</div>";
-                        $count++;
-                }
-                if($count != 3)
-                    echo "</div>";
-                ?>
-                    <br/><br/>
-                    <p>Click on an item to delete it.</p>
-                    <br/><br/><button class="btn btn-lrg" id="back"><a href="Browse.php">Back to Browse</a></button>
-                    <button class="btn btn-lrg" id="clear">Clear All</button>
-                    <button class="btn btn-lrg" id="forward"><a href="Checkout.php">Submit Order</a></button>
-            </div>
-            <script>
-                $(document).ready(function() {
-                    $(".ui-widget-content").height($(".ui-widget-content").width());
-                    $(".item").click(function() {
-                        var id = $(this).attr('id');
-                        $(".alert").load("manipulateCart.php", {
-                            delete: id
-                        });
-                        $(this).remove();
-                        var text = "#" + id + "txt";
-                        $(text).remove();
-                        $(".alert").fadeIn("fast", function() {
-                            $(this).fadeOut(5000, function() {
-                                $(this).stop(true, false);
-                            });
-                        });
-                    });
-                    $("#clear").click(function() {
-                        $(".item").remove();
-                        $(".alert").load("manipulateCart.php", {
-                            reset: "true"
-                        });
-                        $(".alert").fadeIn("fast", function() {
-                            $(this).fadeOut(5000, function() {
-                                $(this).stop(true, false);
-                            });
-                        });
-                    });
-                });
-                $(window).resize(function() {
-                    $(".ui-widget-content").height($(".ui-widget-content").width());
-                });
+                            }
+                            echo "</table>";
+                   ?>
+             </table>
+        </form>
 
-            </script>
     </body>
 
     </html>
