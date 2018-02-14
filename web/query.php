@@ -50,9 +50,9 @@ session_start();
      </head>
      <body>
           <form id="formId" action="send.php" method="post">
-               <textarea name="query" rows="8" cols="80"></textarea><br>
-               <button type="button" name="button" onclick="send()">Run</button>
-               <select name="query_list">
+               <textarea name="query" rows="8" cols="80" id="input"></textarea><br>
+               <button type="button" name="button" onclick="send()">Run</button><br><br>
+               <select name="query_list" id="query_list">
                <?php
                     foreach (scandir("sqlQueries") as $file){
                         $file_ext = strpos($file, ".sql");
@@ -62,6 +62,7 @@ session_start();
                         }
                     }
                ?>
+               <button type="button" name="button" onclick="load()">Load</button>
                </select>
           </form>
           <br><br>
@@ -72,6 +73,9 @@ session_start();
           <script type="text/javascript">
                function send() {
                     $(".result").load("send.php", $('#formId').serialize());
+               }
+               function load() {
+                    $("#input").load($("#query_list").val());
                }
           </script>
      </body>
