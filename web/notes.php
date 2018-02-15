@@ -9,11 +9,12 @@
      $dbPassword = $dbopts["pass"];
      $dbName = ltrim($dbopts["path"],'/');
 
-     $couse = $_GET['course'];
+     $id = $_GET['course'];
 
      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-     $query = "SELECT number, name, id from course WHERE id = $course;";
+     $query = "SELECT number, name, id from course WHERE id = :id;";
      $stmt = $db->prepare($query);
+     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
