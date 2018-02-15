@@ -1,0 +1,36 @@
+<?php
+     $dbUrl = getenv('DATABASE_URL');
+
+     $dbopts = parse_url($dbUrl);
+
+     $dbHost = $dbopts["host"];
+     $dbPort = $dbopts["port"];
+     $dbUser = $dbopts["user"];
+     $dbPassword = $dbopts["pass"];
+     $dbName = ltrim($dbopts["path"],'/');
+
+     $couse = $_GET['course'];
+
+     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+     $query = "SELECT number, name, id from course WHERE id = $course;";
+     $stmt = $db->prepare($query);
+     $stmt->execute();
+     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+     <!DOCTYPE html>
+     <html>
+          <head>
+               <meta charset="utf-8">
+               <title>Courses</title>
+          </head>
+          <body>
+               <h1>Notes for
+               <?php
+                         $number = $row['number'];
+                         $course = $row['name'];
+                         $id = $row['id'];
+                         echo $course . ' - ' . $number;
+               ?>
+          </h1>
+          </body>
+     </html>
