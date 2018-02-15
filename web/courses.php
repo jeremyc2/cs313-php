@@ -1,0 +1,13 @@
+<?php
+?>
+     <!DOCTYPE html>
+     <html>
+          <head>
+               <meta charset="utf-8">
+               <title>Courses</title>
+          </head>
+          <body>
+               <h1>Courses</h1>
+               
+          </body>
+     </html>
