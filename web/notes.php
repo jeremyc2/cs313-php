@@ -9,7 +9,7 @@
      $dbPassword = $dbopts["pass"];
      $dbName = ltrim($dbopts["path"],'/');
 
-     $id = $_GET['course'];
+     $id = $_GET['id'];
 
      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
      $query = "SELECT number, name, id from course WHERE id = :id;";
