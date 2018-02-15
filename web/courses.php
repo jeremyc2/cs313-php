@@ -30,7 +30,7 @@
                     foreach ($rows as $row) {
                          $number = $row['number'];
                          $course = $row['name'];
-                         echo "<li><a href="">$course - $number</a></li>";
+                         echo '<li><a href="">' . $course . '-' . $number . '</a></li>';
                     }
                ?>
           </body>
