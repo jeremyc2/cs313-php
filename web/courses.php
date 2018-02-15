@@ -10,7 +10,7 @@
      $dbName = ltrim($dbopts["path"],'/');
 
      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-     $query = "SELECT number, name from course;";
+     $query = "SELECT number, name, id from course;";
      $stmt = $db->prepare($query);
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +30,8 @@
                     foreach ($rows as $row) {
                          $number = $row['number'];
                          $course = $row['name'];
-                         echo '<li><a href="">' . $course . '-' . $number . '</a></li>';
+                         $id = $row['id'];
+                         echo '<li><a href="notes.php?id=' . $id . '">' . $course . ' - ' . $number . '</a></li>';
                     }
                ?>
           </body>
