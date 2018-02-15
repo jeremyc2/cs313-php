@@ -27,10 +27,12 @@
           <body>
                <h1>Notes for
                <?php
+               foreach ($rows as $row) {
                          $number = $row['number'];
                          $course = $row['name'];
                          $id = $row['id'];
                          echo $course . ' - ' . $number;
+                    }
                ?>
           </h1>
           </body>
