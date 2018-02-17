@@ -35,6 +35,7 @@ session_start();
              function send() {
                   $.get("addplaylistsongs.php", $('#formId').serialize(), function(data){
                     document.getElementById('result').innerHTML = data;
+                    alert($('#formId').serialize());
                   });
              }
         </script>
@@ -73,7 +74,7 @@ session_start();
              ?>
           </select>
           <button type="button" name="button" id="submit" onclick="send()">Submit</button>
-        </form>
+        </form><br>
         <div class="" id="result">
 
         </div>
