@@ -66,7 +66,6 @@ session_start();
               $stmt = $db->prepare($query);
               $stmt->execute();
               $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-              $id = "";
               foreach ($rows as $row) {
                 $id = $row['id'];
                 echo "<option value=\"" . $id . "\">" . $row['title'] . "</option>";
@@ -74,7 +73,6 @@ session_start();
              ?>
           </select>
           <button type="button" name="button" id="submit" onclick="send()">Submit</button>
-          <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
         <div class="" id="result">
 
