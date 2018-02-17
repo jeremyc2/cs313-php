@@ -22,9 +22,6 @@ session_start();
     $stmt->bindValue(':p_id', $p_id, PDO::PARAM_INT);
     $stmt->execute();
 
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
 
               echo "<br><br><br><h1>Playlists</h1><br>";
               $statement = $db->query("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = s.id) join playlists p on (sp.p_id = p.id);");
