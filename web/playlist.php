@@ -63,7 +63,7 @@ session_start();
                                 echo "</tr>\n"; // end row
 
                             }
-                            echo "</table>";;
+                            echo "</table>";
                    ?>
              </table>
         </form>
