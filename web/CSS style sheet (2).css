@@ -60,9 +60,9 @@ img
  }
 
  td:nth-child(even) {
-     background-color: #dddddd;
- }
+     background-color: rgb(230,230,230);
+    }
 
  td:nth-child(odd) {
-     background-color: rgb(246,246,246);
+     background-color: rgb(243,243,243);
  }
