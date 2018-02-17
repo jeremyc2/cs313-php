@@ -32,7 +32,7 @@ session_start();
 
         <link rel="stylesheet" type="text/css" href="CSS%20style%20sheet%20(2).css" />
         <script type="text/javascript">
-             function load() {
+             function send() {
                   $.get("addplaylistsongs.php", $('#formId').serialize(), function(data){
                     $('#result').val(data);
                   });
