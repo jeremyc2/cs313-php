@@ -84,11 +84,7 @@ session_start();
                  <div class="nowPlaying row" id="sortable">
                       <div class="col-sm-3 li">
                            <?php
-                                $stmt = $db->prepare('SELECT * FROM albums a
-                                JOIN songs s ON s.album = a.id
-                                JOIN playlists p ON sp.p_id = playlists.id
-                                JOIN songs_playlists sp ON sp.s_id = songs.id
-                                WHERE p.title = 'nowPlaying'');
+                                $stmt = $db->prepare("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = sp.p_id) join playlists p on (sp.p_id = p.id) where p.title = 'now playing';");
                                 $stmt->execute();
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $row) {
