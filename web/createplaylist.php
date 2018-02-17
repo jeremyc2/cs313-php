@@ -34,7 +34,7 @@ session_start();
         <script type="text/javascript">
              function send() {
                   $.get("addplaylistsongs.php", $('#formId').serialize(), function(data){
-                    $('#result').val(data);
+                    document.getElementById('result').innerHTML = data;
                   });
              }
         </script>
