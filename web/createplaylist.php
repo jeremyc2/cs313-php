@@ -37,6 +37,8 @@ session_start();
         <?php
     require 'parts/navbar.php';
         ?>
+        <div class="well">
+
         <form class="" action="" method="post">
           <label for="">Pick a playlist:</label><br>
           <select class="" name="playlist">
@@ -50,7 +52,19 @@ session_start();
               }
              ?>
           </select>
+          <select class="" name="songs">
+            <?php
+              $query = "select title, id from songs;";
+              $stmt = $db->prepare($query);
+              $stmt->execute();
+              $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($rows as $row) {
+                echo "<option value=\"" . $row['id'] . "\">" . $row['title'] . "</option>";
+              }
+             ?>
+          </select>
         </form>
+      </div>
 
       </body>
     </html>
