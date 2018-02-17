@@ -49,6 +49,7 @@ session_start();
         <form class="" action="" id="formId" method="post">
           <label>Which songs do you want to add?</label><br>
           <input type="text" name="title" value=""><br>
+          <label>From which artist?</label><br>
           <select class="" name="album">
             <?php
                 $query = "select artist, id from albums;";
@@ -60,7 +61,9 @@ session_start();
                 }
              ?>
           </select><br>
+          <label>How many seconds long is it?</label><br>
           <input type="text" name="duration" value=""><br>
+          <label>What genre?</label><br>
           <input type="text" name="genre" value=""><br>
           <button type="button" name="button" id="submit" onclick="send()">Submit</button>
         </form><br>
