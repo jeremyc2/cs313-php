@@ -58,7 +58,7 @@ session_start();
         <div class="" id="result">
           <?php
             echo "<br><br><br><h1>Albums</h1><br>";
-            $statement = $db->query("select artist, genre, rating, id from albums;");
+            $statement = $db->query("select artist, genre, rating from albums;");
             $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
             echo "<table>\n";
             echo "<tr>";
