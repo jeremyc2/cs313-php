@@ -47,17 +47,6 @@ session_start();
         <div class="well">
 
         <form class="" action="" id="formId" method="post">
-          <label for="">Pick a playlist:</label><br>
-          <select class="" name="p_id">
-            <?php
-              $query = "select title, id from playlists;";
-              $stmt = $db->prepare($query);
-              $stmt->execute();
-              $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-              foreach ($rows as $row) {
-                echo "<option value=\"" . $row['id'] . "\">" . $row['title'] . "</option>";
-              }
-             ?>
           </select><br>
           <label>Which songs do you want to add?</label><br>
           <select class="" name="song_id">
@@ -66,10 +55,26 @@ session_start();
               $stmt = $db->prepare($query);
               $stmt->execute();
               $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-              foreach ($rows as $row) {
-                $id = $row['id'];
-                echo "<option value=\"" . $id . "\">" . $row['title'] . "</option>";
+              echo "<br><br><br><h1>Songs</h1><br>";
+              $statement = $db->query("select title, album,	duration,	genre from songs;");
+              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+              echo "<table>\n";
+              echo "<tr>";
+              foreach ($rows[0] as $key => $value) {
+                   echo "<th>" . $key . "</th>";
               }
+              echo "</tr>";
+              foreach ($rows as $values) // For every field name (id, name, last_name, gender)
+              {
+                  echo "<tr>\n"; // start the row
+                      foreach ($values as $cell) // for every sub-array iterate through all values
+                      {
+                         echo "\t<td>" . $cell . "</td>\n"; // write cells next to each other
+                      }
+                  echo "</tr>\n"; // end row
+
+              }
+              echo "</table>";
              ?>
           </select>
           <button type="button" name="button" id="submit" onclick="send()">Submit</button>
