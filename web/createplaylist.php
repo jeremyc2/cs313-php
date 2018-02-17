@@ -31,6 +31,13 @@ session_start();
         <script src="funnybusiness.js"></script>
 
         <link rel="stylesheet" type="text/css" href="CSS%20style%20sheet%20(2).css" />
+        <script type="text/javascript">
+             function load() {
+                  $.get("addplaylistsongs.php", $('#formId').serialize(), function(data){
+                    $('#submit').val(data);
+                  });
+             }
+        </script>
     </head>
 
     <body>
@@ -39,7 +46,7 @@ session_start();
         ?>
         <div class="well">
 
-        <form class="" action="" method="post">
+        <form class="" action="" id="formId" method="post">
           <label for="">Pick a playlist:</label><br>
           <select class="" name="playlist">
             <?php
@@ -64,6 +71,7 @@ session_start();
               }
              ?>
           </select>
+          <button type="button" name="button" id="submit" onclick="send()">Submit</button>
         </form>
       </div>
 
