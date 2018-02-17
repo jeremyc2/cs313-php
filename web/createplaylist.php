@@ -34,7 +34,7 @@ session_start();
         <script type="text/javascript">
              function load() {
                   $.get("addplaylistsongs.php", $('#formId').serialize(), function(data){
-                    $('#submit').val(data);
+                    $('#result').val(data);
                   });
              }
         </script>
@@ -66,13 +66,19 @@ session_start();
               $stmt = $db->prepare($query);
               $stmt->execute();
               $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              $id = "";
               foreach ($rows as $row) {
-                echo "<option value=\"" . $row['id'] . "\">" . $row['title'] . "</option>";
+                $id = $row['id'];
+                echo "<option value=\"" . $id . "\">" . $row['title'] . "</option>";
               }
              ?>
           </select>
           <button type="button" name="button" id="submit" onclick="send()">Submit</button>
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
+        <div class="" id="result">
+
+        </div>
       </div>
 
       </body>

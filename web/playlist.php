@@ -42,7 +42,6 @@ session_start();
         ?>
         <div class="well">
         <form class="" action="index.html" method="post">
-             <table>
                   <?php
                             echo "<br><br><br><h1>Playlists</h1><br>";
                             $statement = $db->query("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = sp.p_id) join playlists p on (sp.p_id = p.id);");
@@ -69,7 +68,6 @@ session_start();
                             }
                             echo "</table>";
                    ?>
-             </table>
         </form>
    </div>
 
