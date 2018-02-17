@@ -48,7 +48,7 @@ session_start();
 
         <form class="" action="" id="formId" method="post">
           <label for="">Pick a playlist:</label><br>
-          <select class="" name="playlist">
+          <select class="" name="p_id">
             <?php
               $query = "select title, id from playlists;";
               $stmt = $db->prepare($query);
@@ -60,7 +60,7 @@ session_start();
              ?>
           </select><br>
           <label>Which songs do you want to add?<label><br>
-          <select class="" name="songs">
+          <select class="" name="song_id">
             <?php
               $query = "select title, id from songs;";
               $stmt = $db->prepare($query);
