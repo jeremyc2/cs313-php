@@ -50,7 +50,9 @@ session_start();
                             echo "<table>\n";
                             echo "<tr>";
                             foreach ($rows[0] as $key => $value) {
+                              if ($key != 'playlist') {
                                  echo "<th>" . $key . "</th>";
+                               }
                             }
                             echo "</tr>";
                             foreach ($rows as $values) // For every field name (id, name, last_name, gender)
