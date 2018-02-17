@@ -51,7 +51,8 @@ session_start();
                 echo "<option value=\"" . $row['id'] . "\">" . $row['title'] . "</option>";
               }
              ?>
-          </select>
+          </select><br>
+          <label>Which songs do you want to add?<label><br>
           <select class="" name="songs">
             <?php
               $query = "select title, id from songs;";
