@@ -47,8 +47,6 @@ session_start();
                             echo "<br><br><br><h1>Playlists</h1><br>";
                             $statement = $db->query("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = sp.p_id) join playlists p on (sp.p_id = p.id);");
                             $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                            ?><label><?php echo $rows['playlist']; ?></label><?php
-                            unset($rows['playlist']);
                             echo "<table>\n";
                             echo "<tr>";
                             foreach ($rows[0] as $key => $value) {
@@ -57,6 +55,7 @@ session_start();
                             echo "</tr>";
                             foreach ($rows as $values) // For every field name (id, name, last_name, gender)
                             {
+                              unset($values['playlist']);
                                 echo "<tr>\n"; // start the row
                                     foreach ($values as $cell) // for every sub-array iterate through all values
                                     {
