@@ -64,5 +64,5 @@ img
  }
 
  td:nth-child(odd) {
-     background-color: grey;
+     background-color: rgb(246,246,246);
  }
