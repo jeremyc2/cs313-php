@@ -45,7 +45,7 @@ session_start();
              <table>
                   <?php
                             echo "<br><br><br><h1>Playlists</h1><br>";
-                            $statement = $db->query("select s.title, artist from songs s join albums a on (s.album = a.id);");
+                            $statement = $db->query("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = sp.p_id) join playlists p on (sp.p_id = p.id) where p.title = 'now playing';");
                             $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
                             echo "<table>\n";
                             echo "<tr>";
