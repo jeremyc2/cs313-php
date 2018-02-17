@@ -18,8 +18,8 @@ session_start();
     // $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     // $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     // $stmt->execute();
-
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // 
+    // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
               echo "<br><br><br><h1>Playlists</h1><br>";
               $statement = $db->query("select s.title as song, p.title as playlist, artist from songs s join albums a on (s.album = a.id) join songs_playlists sp on (sp.s_id = sp.p_id) join playlists p on (sp.p_id = p.id);");
               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
