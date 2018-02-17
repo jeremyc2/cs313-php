@@ -13,7 +13,7 @@ session_start();
     $dbName = ltrim($dbopts["path"], '/');
 
     $p_id = $_GET['p_id'];
-    $s_id = $_GET['s_id'];
+    $s_id = $_GET['song_id'];
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
