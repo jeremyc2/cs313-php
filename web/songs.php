@@ -96,7 +96,7 @@ session_start();
                                     if ($count == 0) {
                                         echo "<div class=\"row\">";
                                     }
-                                    echo "<div class=\"col-sm-4\" id=\"$artist" . "col\"><img src=\"images/$file\" class=\"img-responsive ui-widget-content\" id=\"$artist\"></div>";
+                                    echo "<div class=\"col-sm-4\" id=\"$artist" . "col\">$artist</div>";
                                     if ($count == 2) {
                                         echo "</div>";
                                     }
