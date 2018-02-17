@@ -31,7 +31,7 @@ session_start();
               $stmt->execute();
               $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
               foreach ($rows as $row) {
-                echo "<option value="$row['id']">$row['title']</option>";
+                echo "<option value=\"" . $row['id'] . "\">" . $row['title'] . "</option>";
               }
              ?>
           </select>
