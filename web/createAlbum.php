@@ -51,6 +51,8 @@ session_start();
                   attribute = "genre";
                 else (index == 2)
                   attribute = "rating";
+
+                alert("albums " + attribute + " " + item.innerHTML);
                 $.get("delete.php", { table: "albums", column: attribute, condition: item.innerHTML });
               });
         });
