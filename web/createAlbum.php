@@ -44,13 +44,14 @@ session_start();
               $("td").click(function() {
                 var item = $(this);
                 var index = item.index();
+                alert(index);
                 if (index == 0)
                   attribute = "artist";
                 else if (index == 1)
                   attribute = "genre";
                 else (index == 2)
                   attribute = "rating";
-                $.get("delete.php", { table: "albums", column: attribute, condition: item.innerHTML });  
+                $.get("delete.php", { table: "albums", column: attribute, condition: item.innerHTML });
               });
         });
 
