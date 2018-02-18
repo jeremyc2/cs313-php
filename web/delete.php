@@ -25,6 +25,7 @@ session_start();
       $stmt->bindValue(':column', $column, PDO::PARAM_STR);
       $stmt->bindValue(':condition', $condition, PDO::PARAM_STR);
       $stmt->execute();
+      echo "string";
     } catch (\Exception $e) {
       echo $e;
     }
