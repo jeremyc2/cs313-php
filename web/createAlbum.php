@@ -42,8 +42,7 @@ session_start();
         var attribute = "";
         $(document).ready(function() {
               $("td").click(function() {
-                var item = $(this);
-                var index = item.index(this);
+                var index = $(this).index(this);
                 alert(index);
                 if (index == 0)
                   attribute = "artist";
