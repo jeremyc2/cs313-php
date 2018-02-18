@@ -47,7 +47,7 @@ session_start();
                   attribute = "artist";
                 else if (i == 1)
                   attribute = "genre";
-                else (i == 2)
+                else if(i == 2)
                   attribute = "rating";
 
                 alert("albums " + attribute + " " + this.innerHTML);
