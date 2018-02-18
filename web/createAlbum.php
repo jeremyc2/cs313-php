@@ -43,7 +43,6 @@ session_start();
         $(document).ready(function() {
               $("td").click(function() {
                 var i = this.cellIndex;
-                alert(index);
                 if (i == 0)
                   attribute = "artist";
                 else if (i == 1)
