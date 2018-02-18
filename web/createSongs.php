@@ -56,9 +56,6 @@ session_start();
                 else if(i == 3){
                   attribute = "genre";
                 }
-                alert(
-                  'hi'
-                );
                 $.get("delete.php", { table: "songs", column: attribute, condition: this.innerHTML },function(data){
                   document.getElementById('result').innerHTML = data;});
               });
