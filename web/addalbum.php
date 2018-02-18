@@ -13,9 +13,9 @@ session_start();
     $dbPassword = $dbopts["pass"];
     $dbName = ltrim($dbopts["path"], '/');
 
-    $artist = $_GET['artist'];
-    $rating = $_GET['rating'];
-    $genre = $_GET['genre'];
+    $artist = htmlspecialchars($_GET['artist']);
+    $rating = htmlspecialchars($_GET['rating']);
+    $genre = htmlspecialchars($_GET['genre']);
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 

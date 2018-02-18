@@ -13,10 +13,10 @@ session_start();
     $dbPassword = $dbopts["pass"];
     $dbName = ltrim($dbopts["path"], '/');
 
-    $title = $_GET['title'];
-    $album = $_GET['album'];
-    $duration = $_GET['duration'];
-    $genre = $_GET['genre'];
+    $title = htmlspecialchars($_GET['title']);
+    $album = htmlspecialchars($_GET['album']);
+    $duration = htmlspecialchars($_GET['duration']);
+    $genre = htmlspecialchars($_GET['genre']);
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 

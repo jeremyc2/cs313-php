@@ -16,8 +16,8 @@ session_start();
 
       $table = $_GET['table'];
 
-      $column = $_GET['column'];
-      $condition = $_GET['condition'];
+      $column = htmlspecialchars($_GET['column']);
+      $condition = htmlspecialchars($_GET['condition']);
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       try {
