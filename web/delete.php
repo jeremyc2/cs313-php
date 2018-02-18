@@ -22,7 +22,7 @@ session_start();
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       try {
-      $stmt = $db->prepare('delete from' . $table . 'where' . $column . ' = :condition;');
+      $stmt = $db->prepare('delete from ' . $table . ' where ' . $column . ' = :condition;');
       $stmt->bindValue(':condition', $condition, PDO::PARAM_STR);
       $stmt->execute();
     } catch (\Exception $e) {
