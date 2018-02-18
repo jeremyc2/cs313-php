@@ -42,13 +42,13 @@ session_start();
         var attribute = "";
         $(document).ready(function() {
               $("td").click(function() {
-                var index = $(this).index(this);
+                var i = $(this).index(this);
                 alert(index);
-                if (index == 0)
+                if (i == 0)
                   attribute = "artist";
-                else if (index == 1)
+                else if (i == 1)
                   attribute = "genre";
-                else (index == 2)
+                else (i == 2)
                   attribute = "rating";
 
                 alert("albums " + attribute + " " + this.innerHTML);
