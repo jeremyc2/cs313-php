@@ -16,13 +16,13 @@ session_start();
 
       $table = $_GET['table'];
       //sanatize
-      
+
       $column = $_GET['column'];
       $condition = $_GET['condition'];
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       try {
-      $stmt = $db->prepare('delete from' . $table . 'where' $column' = :coo;');
+      $stmt = $db->prepare('delete from' . $table . 'where' $column' = \':coo\';');
       $stmt->bindValue(':condition', $condition, PDO::PARAM_STR);
       $stmt->execute();
     } catch (\Exception $e) {
