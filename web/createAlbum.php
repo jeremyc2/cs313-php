@@ -52,8 +52,8 @@ session_start();
                 else (index == 2)
                   attribute = "rating";
 
-                alert("albums " + attribute + " " + item.innerHTML);
-                $.get("delete.php", { table: "albums", column: attribute, condition: item.innerHTML });
+                alert("albums " + attribute + " " + $(this).innerHTML);
+                // $.get("delete.php", { table: "albums", column: attribute, condition: item.innerHTML });
               });
         });
 
