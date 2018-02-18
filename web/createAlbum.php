@@ -53,7 +53,8 @@ session_start();
                   attribute = "rating";
                 }
 
-                $.get("delete.php", { table: "albums", column: attribute, condition: this.innerHTML });
+                $.get("delete.php", { table: "albums", column: attribute, condition: this.innerHTML },function(data){
+                  $('result').val(data);});
               });
         });
 
