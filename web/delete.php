@@ -15,18 +15,16 @@ session_start();
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
       $table = $_GET['table'];
+      //sanatize
+      
       $column = $_GET['column'];
       $condition = $_GET['condition'];
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       try {
-        echo "HELLO!!" . $table . $column . $condition;
-      $stmt = $db->prepare('delete from :foo where :boo = :coo;');
-      $stmt->bindValue(':foo', $table, PDO::PARAM_STR);
-      $stmt->bindValue(':boo', $column, PDO::PARAM_STR);
-      $stmt->bindValue(':coo', $condition, PDO::PARAM_STR);
+      $stmt = $db->prepare('delete from' . $table . 'where' $column' = :coo;');
+      $stmt->bindValue(':condition', $condition, PDO::PARAM_STR);
       $stmt->execute();
-      echo "string";
     } catch (\Exception $e) {
       echo $e;
     }
