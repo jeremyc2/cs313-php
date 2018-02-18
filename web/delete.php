@@ -20,6 +20,7 @@ session_start();
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       try {
+        echo "HELLO!!" . $table . $column . $condition;
       $stmt = $db->prepare('delete from :table where :column = :condition;');
       $stmt->bindValue(':table', $table, PDO::PARAM_STR);
       $stmt->bindValue(':column', $column, PDO::PARAM_STR);
