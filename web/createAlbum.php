@@ -52,9 +52,11 @@ session_start();
                 else if(i == 2){
                   attribute = "rating";
                 }
-
+                alert(
+                  'hi'
+                );
                 $.get("delete.php", { table: "albums", column: attribute, condition: this.innerHTML },function(data){
-                  $('result').val(data);});
+                  $('#result').val(data);});
               });
         });
 
