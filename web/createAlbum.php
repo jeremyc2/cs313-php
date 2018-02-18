@@ -56,7 +56,7 @@ session_start();
                   'hi'
                 );
                 $.get("delete.php", { table: "albums", column: attribute, condition: this.innerHTML },function(data){
-                  $('#result').innerHTML = data;});
+                  document.getElementById('result').innerHTML = data;});
               });
         });
 
