@@ -69,6 +69,7 @@ session_start();
         ?>
         <div class="well">
           <!-- artist, genre, rating -->
+          <h1>Click on a table row to delete it.</h1><br>
         <form class="" action="" id="formId" method="post">
           <label>Who is the artist?</label><br>
           <input type="text" name="artist" value=""><br>

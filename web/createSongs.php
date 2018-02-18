@@ -38,6 +38,33 @@ session_start();
                   });
              }
         </script>
+        <script type="text/javascript">
+        var attribute = "";
+        $(document).ready(function() {
+          //title, album,	duration,	genre from songs
+              $("td").click(function() {
+                var i = this.cellIndex;
+                if (i == 0){
+                  attribute = "title";
+                }
+                else if (i == 1){
+                  attribute = "album";
+                }
+                else if(i == 2){
+                  attribute = "duration";
+                }
+                else if(i == 3){
+                  attribute = "genre";
+                }
+                alert(
+                  'hi'
+                );
+                $.get("delete.php", { table: "songs", column: attribute, condition: this.innerHTML },function(data){
+                  document.getElementById('result').innerHTML = data;});
+              });
+        });
+
+        </script>
     </head>
 
     <body>
@@ -45,6 +72,7 @@ session_start();
     require 'parts/navbar.php';
         ?>
         <div class="well">
+          <h1>Click on a table row to delete it.</h1><br>
 
         <form class="" action="" id="formId" method="post">
           <label>Which songs do you want to add?</label><br>
