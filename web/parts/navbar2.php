@@ -20,15 +20,10 @@
                         <a href="home.php">Home</a>
                     </li>
                     <li class="button">
-                        <a href="createSongs.php">Songs</a>
-                    </li>
-                    <li class="button">
-                        <a href="createAlbum.php">Albums</a>
-                    </li>
-                    <li class="button">
-                        <a href="createplaylist.php">Now Playing</a>
+                        <a href="assignments.php">Assignments</a>
                     </li>
                 </ul>
+                <a class="btn btn-primary navbar-btn" onclick="funnybusiness()" >Don't Push the Button!</a>
             </div>
             </div>
         </nav>

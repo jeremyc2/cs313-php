@@ -19,7 +19,7 @@ session_start();
     <html>
       <head>
         <meta charset="utf-8">
-        <title>Create Playlist</title>
+        <title>Create Songs</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
