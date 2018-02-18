@@ -43,14 +43,16 @@ session_start();
         $(document).ready(function() {
               $("td").click(function() {
                 var i = this.cellIndex;
-                if (i == 0)
+                if (i == 0){
                   attribute = "artist";
-                else if (i == 1)
+                }
+                else if (i == 1){
                   attribute = "genre";
-                else if(i == 2)
+                }
+                else if(i == 2){
                   attribute = "rating";
+                }
 
-                alert("albums " + attribute + " " + this.innerHTML);
                 $.get("delete.php", { table: "albums", column: attribute, condition: this.innerHTML });
               });
         });

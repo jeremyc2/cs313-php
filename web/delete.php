@@ -18,9 +18,14 @@ session_start();
       $column = $_GET['column'];
       $condition = $_GET['condition'];
 
-      $stmt = $db->prepare('delete from :table where :column = \':condition\';');
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      try {
+      $stmt = $db->prepare('delete from albums where artist = \':condition\';');
       $stmt->bindValue(':table', $table, PDO::PARAM_STR);
       $stmt->bindValue(':column', $column, PDO::PARAM_STR);
       $stmt->bindValue(':condition', $condition, PDO::PARAM_STR);
       $stmt->execute();
+    } catch (\Exception $e) {
+      echo $e;
+    }
  ?>
