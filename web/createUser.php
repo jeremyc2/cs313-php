@@ -13,7 +13,7 @@
   $username = htmlspecialchars($_REQUEST['username']);
   $hash = password_hash($password, PASSWORD_DEFAULT);
 
-  $stmt = db->prepare("insert into userteam (username, password) values (:username, :password)");
+  $stmt = $db->prepare("insert into userteam (username, password) values (:username, :password)");
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
   $stmt->bindValue(':password', $hash, PDO::PARAM_STR);
   $stmt->execute();
