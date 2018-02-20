@@ -23,7 +23,9 @@
   else {
     $newURL = "Signup.php";
   }
-  vardump($newURL);
+  var_dump($newURL);
+  var_dump($username);
+  var_dump($hash);
   header('Location: ' . $newURL);
   die();
 
