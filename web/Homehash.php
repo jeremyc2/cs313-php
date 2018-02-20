@@ -1,4 +1,4 @@
-<?php
+
   <!DOCTYPE html>
   <html>
     <head>
@@ -6,7 +6,7 @@
       <title>Home</title>
     </head>
     <body>
-      <form class="" action="" method="post">
+      <form class="" action="authenticate.php" method="post">
         <label for="">Enter your username:</label><br>
         <input type="text" name="username" value=""><br>
         <label for="password">Enter your password:</label><br>
@@ -16,4 +16,3 @@
 
     </body>
   </html>
- ?>
