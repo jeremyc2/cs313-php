@@ -23,7 +23,7 @@
   else {
     $newURL = "Signup.php";
   }
-
+  vardump($newURL);
   header('Location: ' . $newURL);
   die();
 
