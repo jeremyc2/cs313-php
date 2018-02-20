@@ -23,6 +23,7 @@
   else {
     $newURL = "Signup.php";
   }
+  echo "HELLO BOB!";
   var_dump($newURL);
   var_dump($username);
   var_dump($hash);
