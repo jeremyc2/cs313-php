@@ -53,7 +53,7 @@ function loadDoc() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "http://40.114.119.178:8000/v1/invoke", true);
+  xhttp.open("POST", "https://40.114.119.178:8000/v1/invoke", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("module=/add-note.xqy");
 }
